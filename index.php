@@ -11,7 +11,7 @@ if(isset($_POST['name'])){
     if(!$con){
         die("connection is failed" . mysqli_connect_error());
     }
-    //echo "Success connecting to the database";
+    
     $name = $_POST['name'];
     $age = $_POST['age'];
     $gender = $_POST['gender'];
@@ -19,7 +19,7 @@ if(isset($_POST['name'])){
     $phone = $_POST['phone'];
     $desc = $_POST['desc'];
     $sql = "INSERT INTO `trip`.`trip` (`name`, `age`, `gender`, `email`, `phone`, `other`, `dt`) VALUES ('$name', '$age', '$gender', '$email', '$phone', '$desc', current_timestamp());";
-    //echo $sql;
+    
 
     if($con->query($sql) == true){
         //echo "succesfully inserted";
@@ -71,6 +71,6 @@ if(isset($_POST['name'])){
         </form>
     </div>
     <script src="index.js"></script>
-    <!--INSERT INTO `trip` (`sno`, `name`, `age`, `gender`, `email`, `phone`, `other`, `dt`) VALUES ('1', 'textname', '23', 'male', 'this@gmail.com', '999999999', 'this is my first ever phpmyadmin msg.', current_timestamp());-->
+    
 </body>
 </html>
